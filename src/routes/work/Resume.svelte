@@ -164,7 +164,7 @@
 						<a href="http://eatdrink.com" rel="external noreferrer" target="_blank">Eatdrink</a>
 					</h3>
 					<p>Intern → Interactive Lead</p>
-					<p class="date">Mar 2003 - Apr 2009</p>
+					<p class="date">Mar 2003 – Apr 2009</p>
 					<p>
 						“The Web Guy” at a Vegas‑based boutique creative agency known for animation, motion
 						graphics, illustration, and band websites
