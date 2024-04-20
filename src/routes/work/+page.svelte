@@ -1,3 +1,7 @@
+<script>
+	import Resume from './Resume.svelte';
+</script>
+
 <svelte:head>
 	<title>Nick Vincent → Work</title>
 	<meta name="description" content="Professional pixel pusher." />
@@ -5,3 +9,5 @@
 
 <h1>Work</h1>
 <p>Professional pixel pusher.</p>
+
+<Resume />
