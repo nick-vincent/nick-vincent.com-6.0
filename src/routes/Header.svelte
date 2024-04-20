@@ -2,11 +2,11 @@
 	import { page } from '$app/stores';
 
 	const navItems = [
-		{ text: 'Work', href: '/work' },
-		{ text: 'Tunes', href: '/tunes' },
-		{ text: 'Faces', href: '/faces' },
-		{ text: 'Photos', href: '/photos' },
-		{ text: 'Contact', href: '/contact' }
+		{ text: 'Work', href: '/work/' },
+		{ text: 'Tunes', href: '/tunes/' },
+		{ text: 'Faces', href: '/faces/' },
+		{ text: 'Photos', href: '/photos/' },
+		{ text: 'Contact', href: '/contact/' }
 	];
 </script>
 
