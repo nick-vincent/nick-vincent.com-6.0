@@ -1,6 +1,6 @@
 <script>
 	import Image from '$lib/Image.svelte';
-	import photo from '$lib/images/home.png?format=webp&w=1200';
+	import photo from '$lib/images/home.jpg?format=webp&w=1200';
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 <h1 class="visually-hidden">Nick Vincent</h1>
 <div class="grid">
 	<div class="image">
-		<Image alt="Recording guitar tracks." src={photo} width="2941" height="2941" />
+		<Image alt="Recording guitar tracks." src={photo} width="2251" height="2251" />
 	</div>
 	<div class="text">
 		<p>Known to</p>
