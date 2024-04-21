@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+	font-family: var(--font-family);
+}
+
+html {
+	font-size: clamp(16px, 5vw, 24px);
+	line-height: 1.6;
+	font-weight: 400;
+	letter-spacing: -0.025em;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 3rem;
+	line-height: 1.25;
+	font-weight: 500;
+	letter-spacing: -0.15rem;
+}
+
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+	line-height: 1.25;
+	font-weight: 500;
+	letter-spacing: -0.05rem;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+p:not(:last-child) {
+	margin-bottom: 1em;
+}
+
+ul {
+	display: block;
+	margin: 1em 0 0;
+	padding: 0;
+	list-style: none;
+}
+ul:not(:last-child) {
+	margin-bottom: 1em;
+}
+
+li {
+	position: relative;
+	padding: 0;
+}
+
+ul.bullet {
+	padding: 0 0 0 1em;
+}
+ul.bullet li::before {
+	content: '\2022';
+	display: inline-block;
+	position: absolute;
+	width: 1em;
+	left: -1em;
+}
+
+ul.inline {
+	display: block;
+}
+ul.inline li {
+	display: inline;
+	vertical-align: middle;
+}
+ul.inline li:not(:first-child)::before {
+	content: ' | ';
+	color: var(--color-line);
+	margin: 0 0.25rem;
+}
+
+hr {
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-top: 2px solid var(--color-line);
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}

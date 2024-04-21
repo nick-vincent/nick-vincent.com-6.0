@@ -14,7 +14,13 @@
 </script>
 
 <header>
-	<button on:click={() => (navOpen = !navOpen)}>Menu</button>
+	<button on:click={() => (navOpen = !navOpen)}>
+		{#if navOpen}
+			Close navigation
+		{:else}
+			Open navigation
+		{/if}
+	</button>
 	<nav class:navOpen>
 		<ul>
 			{#each navItems as { href, text }}
@@ -77,10 +83,10 @@
 	a {
 		display: block;
 		font-weight: 500;
-		font-size: 1.5em;
+		font-size: 1.25rem;
 		line-height: 1;
 		text-decoration: none;
 		padding: 0.5em 1em;
-		color: black;
+		color: var(--color-ui);
 	}
 </style>

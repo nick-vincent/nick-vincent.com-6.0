@@ -1,0 +1,76 @@
+:root {
+	/* fonts */
+	--font-family: 'Ubuntu', sans-serif;
+
+	/* transitions */
+	--duration-nav: 150ms;
+	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
+	--ease-decelerate: cubic-bezier(0, 0, 0, 1);
+	--ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+
+	/* shadows */
+	--image-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+	--image-shadow-focus: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+
+	/* colors */
+	--html-gradient: linear-gradient(
+		to bottom,
+		rgb(91, 107, 196) 0%,
+		rgb(176, 167, 202) 50dvh,
+		rgb(186, 150, 152) 100dvh
+	);
+
+	/* colors: light mode */
+	--light-html-gradient-opacity: 0.25;
+	--light-color-background: rgba(255, 255, 255, 0.85);
+	--light-color-nav-background: rgba(255, 255, 255, 0.5);
+	--light-color-ui: rgba(0, 0, 0, 0.75);
+	--light-color-ui-invert: rgba(255, 255, 255, 0.75);
+	--light-color-text: rgba(0, 0, 0, 0.65);
+	--light-color-h1: rgba(0, 0, 0, 0.75);
+	--light-color-h2: rgba(0, 0, 0, 0.7);
+	--light-color-link: rgba(80, 120, 180, 0.85);
+	--light-color-date: rgba(0, 0, 0, 0.4);
+	--light-color-line: rgba(0, 0, 0, 0.1);
+	--light-color-bullet: rgba(0, 0, 0, 0.2);
+	--light-color-arrow: rgba(0, 0, 0, 0.2);
+	--light-color-tooltip-text: rgba(204, 204, 204, 0.9);
+	--light-color-tooltip-background: rgba(34, 34, 34, 0.9);
+	--light-color-focus-highlight: rgba(60, 120, 180, 0.15);
+	--light-color-resume-text: #333;
+	--light-color-resume-background: rgba(255, 255, 255, 0.5);
+	--light-color-image-background: rgba(0, 0, 63, 0.05);
+	--light-header-text-shadow: rgba(255, 255, 255, 0.25) 1px 1px 0;
+	--light-body-gradient: radial-gradient(
+		circle at center top,
+		rgba(255, 255, 255, 0.5) 0,
+		rgba(255, 255, 255, 0) 100dvh
+	);
+
+	/* colors: dark mode */
+	--dark-html-gradient-opacity: 0.25;
+	--dark-color-background: rgba(0, 0, 0, 0.9);
+	--dark-color-nav-background: rgba(0, 0, 0, 0.5);
+	--dark-color-ui: rgba(255, 255, 255, 0.75);
+	--dark-color-ui-invert: rgba(0, 0, 0, 0.75);
+	--dark-color-text: rgba(255, 255, 255, 0.65);
+	--dark-color-h1: rgba(255, 255, 255, 0.75);
+	--dark-color-h2: rgba(255, 255, 255, 0.7);
+	--dark-color-link: rgba(94, 167, 255, 0.75);
+	--dark-color-date: rgba(255, 255, 255, 0.35);
+	--dark-color-line: rgba(255, 255, 255, 0.1);
+	--dark-color-bullet: rgba(255, 255, 255, 0.25);
+	--dark-color-arrow: rgba(255, 255, 255, 0.15);
+	--dark-color-tooltip-text: rgba(34, 34, 34, 0.9);
+	--dark-color-tooltip-background: rgba(221, 221, 221, 0.9);
+	--dark-color-focus-highlight: rgba(94, 167, 255, 0.1);
+	--dark-color-resume-text: #ccc;
+	--dark-color-resume-background: rgba(255, 255, 255, 0.05);
+	--dark-color-image-background: rgba(0, 0, 0, 0.1);
+	--dark-header-text-shadow: rgba(0, 0, 0, 0.25) 1px 1px 0;
+	--dark-body-gradient: radial-gradient(
+		circle at center 8rem,
+		rgba(0, 0, 0, 0.25),
+		rgba(0, 0, 0, 0.75)
+	);
+}

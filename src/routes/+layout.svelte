@@ -33,7 +33,11 @@
 	}
 
 	.content {
+		min-height: 100dvh;
 		max-width: 54rem;
-		margin: 2rem;
+		margin: auto;
+		padding: 4rem 2rem;
+		display: flex;
+		flex-direction: column;
 	}
 </style>
