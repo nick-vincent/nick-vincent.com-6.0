@@ -1,4 +1,30 @@
-<article>
+<script>
+	let innerWidth;
+	let ready = false;
+
+	$: if (innerWidth) resizeAllGridItems();
+
+	function resizeAllGridItems() {
+		const allItems = document.getElementsByClassName('item');
+		for (let x = 0; x < allItems.length; x++) {
+			resizeGridItem(allItems[x]);
+		}
+		ready = true;
+	}
+
+	function resizeGridItem(item) {
+		item.style.gridRowEnd = '';
+		const grid = item.closest('.grid');
+		const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+		const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+		const rowSpan = Math.ceil((item.scrollHeight + rowGap) / (rowHeight + rowGap));
+		item.style.gridRowEnd = `span ${rowSpan}`;
+	}
+</script>
+
+<svelte:window bind:innerWidth />
+
+<article class:ready>
 	<header>
 		<h1>Nick Vincent</h1>
 		<p>
@@ -184,3 +210,212 @@
 		>, a developer tool to see through the DOM with 1,000+ users and counting.
 	</footer>
 </article>
+
+<style>
+	article {
+		display: grid;
+		gap: 2.5em;
+		max-width: calc(100vw - 2rem);
+		padding: 3rem 2rem;
+		font-size: 16px;
+		line-height: 1.6;
+		letter-spacing: normal;
+		text-align: left;
+		background-color: var(--color-resume-background);
+		box-shadow:
+			var(--image-shadow),
+			inset 0 0 0 1px var(--color-line);
+		opacity: 0;
+	}
+
+	article.ready,
+	:global(html.no-js) article {
+		opacity: 1;
+	}
+
+	article *,
+	article *::before,
+	article *::after {
+		color: var(--color-resume-text);
+	}
+
+	main {
+		display: grid;
+		padding: 0;
+		gap: 3em;
+		margin: 0;
+	}
+
+	header {
+		display: grid;
+		gap: 0.25em;
+	}
+
+	footer h2 {
+		margin-bottom: 2em;
+	}
+
+	#expertise h2 {
+		margin-bottom: 2em;
+	}
+
+	#education,
+	#experience {
+		display: grid;
+		gap: 2.5em;
+		align-content: start;
+	}
+
+	.column {
+		display: grid;
+		align-items: start;
+		gap: 2.5em;
+	}
+
+	header p {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 2em;
+		line-height: 1;
+		letter-spacing: -0.025em;
+	}
+
+	h2 {
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+		font-size: calc(14em / 16);
+		font-weight: 600;
+		line-height: 1;
+		border-top: 1px solid var(--color-resume-text);
+		border-bottom: 1px solid var(--color-resume-text);
+		padding: 0.5rem;
+		margin: 0;
+	}
+
+	main p,
+	main ul {
+		max-width: 16em;
+	}
+
+	a {
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline 1px;
+		text-underline-offset: 2px;
+	}
+
+	#education h3 {
+		font-size: calc(18em / 16);
+		margin: 0;
+	}
+
+	#experience h3 {
+		font-size: 1.25em;
+		margin: 0;
+		line-height: 1.2;
+	}
+
+	.date {
+		margin-top: -1em;
+		font-style: italic;
+	}
+
+	ul.bullet li::before {
+		content: '-';
+	}
+	ul.bullet li:not(:last-of-type) {
+		padding-bottom: 1em;
+	}
+
+	@media (min-width: 720px) {
+		header {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2.5em;
+		}
+
+		header h1 {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+
+		#contact {
+			text-align: right;
+		}
+
+		main {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: 1em;
+			gap: 2.5em;
+			margin: 0;
+		}
+
+		#experience {
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: start;
+			gap: 2.5em;
+
+			grid-row-start: 1;
+			grid-column-start: 2;
+			grid-column-end: 3;
+		}
+
+		#experience h2 {
+			grid-column-start: 1;
+		}
+	}
+
+	@media (min-width: 960px) {
+		header {
+			grid-template-columns: repeat(3, 1fr);
+			align-items: end;
+		}
+
+		header h1 {
+			grid-column-end: 1;
+		}
+
+		main {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-auto-rows: 1em;
+			gap: 2.5em;
+		}
+
+		#expertise {
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
+
+		#education {
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
+
+		#experience {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: start;
+			gap: 2.5em;
+
+			grid-row-start: 1;
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+
+		#experience h2 {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
+</style>
