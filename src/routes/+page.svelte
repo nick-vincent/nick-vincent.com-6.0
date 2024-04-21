@@ -1,4 +1,5 @@
 <script>
+	import Image from '$lib/Image.svelte';
 	import photo from '$lib/images/home.jpg?format=webp&w=1200';
 </script>
 
@@ -10,25 +11,17 @@
 	/>
 </svelte:head>
 
-<div class="wrapper">
-	<div class="image-wrapper">
-		<img alt="Nick recording guitar tracks." src={photo} width="3024" height="3780" />
-	</div>
-	<h1>Nick Vincent</h1>
-	<p>
-		Known to <a href="/work/">push pixels</a>, <a href="/tunes/">strum tunes</a>,
-		<a href="/faces/">make faces</a>, &
-		<a href="/photos/">snap photos</a>.
-	</p>
-</div>
+<Image alt="Recording guitar tracks." src={photo} width="3024" height="3780" />
+<h1 class="visually-hidden">Nick Vincent</h1>
+<p>
+	Known to <a href="/work/">push&nbsp;pixels</a>, <a href="/tunes/">strum&nbsp;tunes</a>,
+	<a href="/faces/">make&nbsp;faces</a>,
+	<a href="/photos/">snap&nbsp;photos</a>, & <a href="/contact/">reply&nbsp;promptly</a>.
+</p>
 
 <style>
-	.wrapper {
-		margin: auto;
-		width: 100%;
-	}
-
-	.image-wrapper {
-		margin: 0 0 0.5rem 0;
+	p {
+		margin: 0.5rem 0 0;
+		text-align: center;
 	}
 </style>

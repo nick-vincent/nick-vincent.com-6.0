@@ -1,4 +1,5 @@
 <script>
+	import Image from '$lib/Image.svelte';
 	import photo from '$lib/images/contact.jpg?format=webp&w=1200';
 </script>
 
@@ -8,9 +9,7 @@
 </svelte:head>
 
 <div class="wrapper">
-	<div class="image-wrapper">
-		<img alt="Phone booth relic." src={photo} width="3024" height="3779" />
-	</div>
+	<Image alt="Phone booth relic." src={photo} width="3024" height="3779" />
 	<h1>Contact</h1>
 	<p>Connect or get in touch.</p>
 	<ul>
@@ -25,9 +24,5 @@
 	.wrapper {
 		margin: auto;
 		width: 100%;
-	}
-
-	.image-wrapper {
-		margin: 0 0 0.5rem 0;
 	}
 </style>
