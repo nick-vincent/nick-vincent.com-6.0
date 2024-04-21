@@ -3,9 +3,10 @@
 	export let alt;
 	export let width;
 	export let height;
+	export let radius = '1.5rem';
 </script>
 
-<div class="wrapper">
+<div class="wrapper" style={`--border-radius: ${radius}`}>
 	<img {alt} {src} {width} {height} />
 </div>
 
@@ -13,7 +14,7 @@
 	.wrapper {
 		z-index: 0;
 		position: relative;
-		border-radius: 1.5rem;
+		border-radius: var(--border-radius);
 		overflow: hidden;
 		box-shadow: var(--image-shadow);
 		background-color: var(--color-image-background);
@@ -24,7 +25,7 @@
 		position: absolute;
 		z-index: 1;
 		content: '';
-		border-radius: 1.5rem;
+		border-radius: var(--border-radius);
 		inset: 0;
 		background-image: linear-gradient(
 			to right,
@@ -45,7 +46,7 @@
 		position: absolute;
 		z-index: 3;
 		content: '';
-		border-radius: 1.5rem;
+		border-radius: var(--border-radius);
 		inset: 0;
 		background-image: linear-gradient(to top, var(--dark-color-line), var(--light-color-line));
 		background-clip: padding-box;
