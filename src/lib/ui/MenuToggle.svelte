@@ -7,19 +7,17 @@
 	};
 </script>
 
-<a
-	href="#navigation"
-	role="button"
+<button
 	aria-haspopup="true"
 	aria-controls="navigation"
 	aria-expanded={open ? 'true' : 'false'}
-	on:click|preventDefault={onClick}
+	on:click={onClick}
 >
 	<span class="visually-hidden">
 		{#if open}
-			Close menu
+			Close navigation menu
 		{:else}
-			Open menu
+			Open navigation menu
 		{/if}
 	</span>
 	<span class="hamburger" aria-hidden="true">
@@ -28,10 +26,10 @@
 		<span class="clockwise" />
 		<span class="counterwise" />
 	</span>
-</a>
+</button>
 
 <style>
-	a {
+	button {
 		z-index: 3;
 		cursor: pointer;
 		display: block;
@@ -51,20 +49,20 @@
 			opacity 200ms var(--ease-standard);
 	}
 
-	a:active {
+	button:active {
 		background: none;
 	}
 
-	a::before {
+	button::before {
 		inset: 0;
 	}
 
-	a:focus {
+	button:focus {
 		opacity: 1;
 	}
 
 	@media (hover: hover) {
-		a:hover {
+		button:hover {
 			opacity: 1;
 		}
 	}
@@ -137,13 +135,8 @@
 		transform: rotate(-45deg);
 	}
 
-	:global(html.no-js):has(#navigation:target) a {
-		opacity: 0;
-		visibility: hidden;
-	}
-
 	@media print {
-		a {
+		button {
 			display: none;
 		}
 	}
