@@ -33,8 +33,8 @@
 	);
 
 	/* colors: light mode */
-	--light-html-gradient-opacity: 0.25;
-	--light-color-background: rgba(255, 255, 255, 0.85);
+	--light-html-gradient-opacity: 0.3;
+	--light-color-background: white;
 	--light-color-nav-background: rgba(255, 255, 255, 0.5);
 	--light-color-ui: rgba(0, 0, 0, 0.75);
 	--light-color-ui-invert: rgba(255, 255, 255, 0.75);
@@ -60,8 +60,8 @@
 	);
 
 	/* colors: dark mode */
-	--dark-html-gradient-opacity: 0.25;
-	--dark-color-background: rgba(0, 0, 0, 0.9);
+	--dark-html-gradient-opacity: 0.3;
+	--dark-color-background: black;
 	--dark-color-nav-background: rgba(0, 0, 0, 0.5);
 	--dark-color-ui: rgba(255, 255, 255, 0.75);
 	--dark-color-ui-invert: rgba(0, 0, 0, 0.75);
