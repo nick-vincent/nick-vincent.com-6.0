@@ -20,6 +20,10 @@
 </div>
 
 <style>
+	.wrapper {
+		margin: auto;
+	}
+
 	img {
 		display: block;
 		width: 100%;
