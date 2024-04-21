@@ -1,5 +1,5 @@
 <script>
-	import photo from '$lib/images/home.jpg';
+	import photo from '$lib/images/home.jpg?format=webp&w=1200';
 </script>
 
 <svelte:head>
@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div class="wrapper">
-	<img alt="Nick recording guitar tracks." src={photo} />
+	<img alt="Nick recording guitar tracks." src={photo} width="3024" height="3780" />
 	<h1>Nick Vincent</h1>
 	<p>
 		Known to <a href="/work/">push pixels</a>, <a href="/tunes/">strum tunes</a>,
@@ -23,13 +23,10 @@
 <style>
 	.wrapper {
 		margin: auto;
+		width: 100%;
 	}
 
 	img {
-		display: block;
-		width: 100%;
-		border-radius: 1rem;
 		margin: 0 0 0.5rem 0;
-		box-shadow: var(--image-shadow);
 	}
 </style>
