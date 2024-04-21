@@ -175,8 +175,3 @@ a,
 button {
 	color: var(--color-link);
 }
-
-a::after,
-button::after {
-	color: var(--color-arrow);
-}

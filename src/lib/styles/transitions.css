@@ -4,8 +4,7 @@
 	transition: var(--transition-theme);
 }
 
-html,
-body {
+html {
 	scroll-behavior: smooth;
 }
 
