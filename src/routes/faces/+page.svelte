@@ -3,5 +3,7 @@
 	<meta name="description" content="Portraits of various famous folks." />
 </svelte:head>
 
-<h1>Faces</h1>
-<p>Portraits of various famous folks.</p>
+<div class="intro">
+	<h1>Faces</h1>
+	<p>Portraits of various famous folks.</p>
+</div>

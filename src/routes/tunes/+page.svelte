@@ -3,5 +3,7 @@
 	<meta name="description" content="Assorted musical endeavors." />
 </svelte:head>
 
-<h1>Tunes</h1>
-<p>Assorted musical endeavors.</p>
+<div class="intro">
+	<h1>Tunes</h1>
+	<p>Assorted musical endeavors.</p>
+</div>

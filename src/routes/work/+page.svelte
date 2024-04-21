@@ -7,7 +7,9 @@
 	<meta name="description" content="Professional pixel pusher." />
 </svelte:head>
 
-<h1>Work</h1>
-<p>Professional pixel pusher.</p>
+<div class="intro">
+	<h1>Work</h1>
+	<p>Professional pixel pusher.</p>
+</div>
 
 <Resume />
