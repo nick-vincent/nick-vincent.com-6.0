@@ -1,34 +1,43 @@
 <script>
 	import { page } from '$app/stores';
 
-	export let navOpen = false;
+	import MenuToggle from '$lib/ui/MenuToggle.svelte';
+	import ThemeToggle from '$lib/ui/ThemeToggle.svelte';
+
+	export let open = false;
 
 	const navItems = [
-		{ text: 'Home', href: '/' },
 		{ text: 'Work', href: '/work/' },
 		{ text: 'Tunes', href: '/tunes/' },
 		{ text: 'Faces', href: '/faces/' },
 		{ text: 'Photos', href: '/photos/' },
 		{ text: 'Contact', href: '/contact/' }
 	];
+
+	let width;
+	$: if (width >= 640) open = false;
 </script>
 
-<header>
-	<button on:click={() => (navOpen = !navOpen)}>
-		{#if navOpen}
-			Close navigation
-		{:else}
-			Open navigation
-		{/if}
-	</button>
-	<nav class:navOpen>
-		<ul>
+<header class:open bind:clientWidth={width}>
+	<nav>
+		<div id="menu">
+			<MenuToggle bind:open />
+		</div>
+		<a
+			id="home"
+			on:click={() => (open = false)}
+			aria-current={$page.url.pathname === '/' ? 'page' : null}
+			href="/">Nick Vincent</a
+		>
+		<div id="theme">
+			<ThemeToggle />
+		</div>
+		<ul id="navigation">
 			{#each navItems as { href, text }}
 				<li>
 					<a
 						{href}
-						tabindex={navOpen ? null : '-1'}
-						on:click={() => (navOpen = false)}
+						on:click={() => (open = false)}
 						aria-current={$page.url.pathname === href ? 'page' : null}>{text}</a
 					>
 				</li>
@@ -38,55 +47,159 @@
 </header>
 
 <style>
-	button {
+	header {
 		z-index: 2;
-		cursor: pointer;
-		position: fixed;
-		top: 0;
+		position: absolute;
 		left: 0;
+		right: 0;
+		top: 0;
+		min-height: 0;
+		padding: 1rem 1rem 0;
+		backdrop-filter: blur(1rem);
+		-webkit-backdrop-filter: blur(1rem);
+		transition: min-height calc(var(--duration-menu) * 2) var(--ease-accelerate);
+	}
+
+	header.open {
+		min-height: 100dvh;
+		transition: min-height calc(var(--duration-menu) * 2) var(--ease-decelerate);
+	}
+
+	header::before,
+	header::after {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: 0;
+		z-index: -2;
+		opacity: 0;
+		transition: opacity 500ms var(--ease-standard);
+	}
+
+	/* light mode */
+	header::before {
+		background-color: var(--color-nav-background);
+		background-image: var(--light-body-gradient);
+	}
+	header.open::before {
+		opacity: var(--light-body-gradient-opacity);
+	}
+
+	/* dark mode */
+	header::after {
+		background-color: var(--color-nav-background);
+		background-image: var(--dark-body-gradient);
+	}
+	header.open::after {
+		opacity: var(--dark-body-gradient-opacity);
 	}
 
 	nav {
-		z-index: 1;
-		text-align: center;
-		pointer-events: none;
-		position: fixed;
 		display: flex;
-		inset: 0;
-		opacity: 0;
-		transform: scale(0.95);
-		transition-property: opacity, transform;
-		transition-duration: var(--duration-nav);
-		transition-timing-function: var(--ease-accelerate);
-	}
-
-	nav.navOpen {
-		pointer-events: auto;
-		opacity: 1;
-		transform: scale(1);
-		transition-delay: var(--duration-nav);
-		transition-timing-function: var(--ease-decelerate);
+		gap: 1rem;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 50rem;
+		padding: 0 0 1rem;
+		margin: 0 auto;
+		border-bottom: 2px solid var(--color-line);
 	}
 
 	ul {
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		gap: 0.75rem;
+		inset: 0;
+		margin: 0;
 		padding: 0;
-		margin: auto;
-		display: block;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.25rem;
+		text-align: center;
 	}
 
 	li {
 		padding: 0;
 		margin: 0;
-		display: block;
+		opacity: 0;
+		visibility: hidden;
+		transition:
+			visibility var(--duration-menu) ease-in-out,
+			opacity var(--duration-menu) ease-in-out;
+	}
+
+	header.open li {
+		opacity: 1;
+		visibility: visible;
+		transition:
+			visibility var(--duration-menu) ease-in-out var(--duration-menu),
+			opacity var(--duration-menu) ease-in-out var(--duration-menu);
+	}
+
+	#home {
+		z-index: 2;
+		text-align: center;
+		font-size: 1.25rem;
+		line-height: 1;
 	}
 
 	a {
-		display: block;
-		font-weight: 500;
-		font-size: 1.25rem;
-		line-height: 1;
+		color: var(--color-text);
 		text-decoration: none;
-		padding: 0.5em 1em;
-		color: var(--color-ui);
+	}
+	header.open a {
+		color: var(--color-h1);
+	}
+
+	@media (min-width: 860px) {
+		header {
+			padding: 2rem 2rem 0;
+		}
+
+		#menu {
+			display: none;
+		}
+
+		#theme {
+			order: 3;
+			margin-left: auto;
+		}
+
+		#home {
+			font-size: 1.5rem;
+		}
+
+		nav {
+			padding: 0 0 0.5rem;
+			justify-content: flex-start;
+			align-items: baseline;
+		}
+
+		ul {
+			position: static;
+			opacity: 1;
+			visibility: visible;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			gap: 1rem;
+			padding: 0;
+			margin: 0;
+			font-size: 1rem;
+			line-height: 1;
+			font-weight: 400;
+			list-style: none;
+		}
+
+		li {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		a {
+			font-weight: 500;
+		}
 	}
 </style>

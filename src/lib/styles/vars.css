@@ -3,14 +3,17 @@
 	--font-family: 'Ubuntu', sans-serif;
 
 	/* transitions */
-	--duration-nav: 150ms;
+	--duration-menu: 150ms;
 	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
 	--ease-decelerate: cubic-bezier(0, 0, 0, 1);
 	--ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+	--transition-theme: color 1s var(--ease-standard), border-color 1s var(--ease-standard),
+		background-color 1s var(--ease-standard), outline-color 1s var(--ease-standard),
+		box-shadow 1s var(--ease-standard), opacity 1s var(--ease-standard),
+		fill 1s var(--ease-standard);
 
 	/* shadows */
-	--image-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-	--image-shadow-inset: inset 0 0 0 0.1rem rgba(255, 255, 255, 0.25);
+	--image-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
 	--image-shadow-focus: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
 
 	/* colors */

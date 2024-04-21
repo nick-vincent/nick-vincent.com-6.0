@@ -23,7 +23,6 @@
 	--dark-body-gradient-opacity: 0;
 }
 
-/*
 @media (prefers-color-scheme: dark) {
 	:root {
 		--html-gradient-opacity: var(--dark-html-gradient-opacity);
@@ -120,7 +119,6 @@
 	--light-body-gradient-opacity: 0;
 	--dark-body-gradient-opacity: 1;
 }
-*/
 
 *,
 *::after,

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js no-transitions">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -10,6 +10,13 @@
 			href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
 			rel="stylesheet"
 		/>
+		<script>
+			const prefers = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			const stored = localStorage.getItem('theme');
+			const theme = stored || prefers;
+			document.documentElement.classList.add(theme);
+			document.documentElement.classList.remove('no-js');
+		</script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMDTYBHWTK"></script>
 		<script>

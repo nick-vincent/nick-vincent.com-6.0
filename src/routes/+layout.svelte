@@ -1,43 +1,29 @@
 <script>
-	import Header from './Header.svelte';
-	import '../styles/index.css';
+	import '$lib/styles/index.css';
+	import Header from './header.svelte';
+	import PageTransition from '$lib/PageTransition.svelte';
 
-	let navOpen = false;
+	export let data;
+
+	let windowWidth;
+
+	$: pathParts = data.pathname.split('/');
+	$: dir = `/${pathParts[1]}`;
+
+	$: if (windowWidth) {
+		document.documentElement.classList.add('no-transitions');
+		setTimeout(() => {
+			document.documentElement.classList.remove('no-transitions');
+		}, 50);
+	}
 </script>
 
-<Header bind:navOpen />
+<svelte:window bind:innerWidth={windowWidth} />
 
-<main class:navOpen>
-	<div class="content">
+<Header />
+
+<main>
+	<PageTransition key={dir}>
 		<slot />
-	</div>
+	</PageTransition>
 </main>
-
-<style>
-	main {
-		inset: 0;
-		overflow: auto;
-		position: fixed;
-		transition-property: opacity, transform;
-		transition-duration: var(--duration-nav);
-		transition-delay: var(--duration-nav);
-		transition-timing-function: var(--ease-accelerate);
-	}
-
-	main.navOpen {
-		pointer-events: none;
-		opacity: 0;
-		transform: scale(0.95);
-		transition-delay: 0ms;
-		transition-timing-function: var(--ease-decelerate);
-	}
-
-	.content {
-		min-height: 100dvh;
-		max-width: 54rem;
-		margin: auto;
-		padding: 4rem 2rem;
-		display: flex;
-		flex-direction: column;
-	}
-</style>
