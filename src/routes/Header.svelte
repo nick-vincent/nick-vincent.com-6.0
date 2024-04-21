@@ -15,12 +15,12 @@
 	];
 
 	let width;
-	$: mobile = width < 640;
-	$: if (width >= 640) open = false;
+	$: desktop = width >= 860;
+	$: if (desktop) open = false;
 </script>
 
-<header class:open bind:clientWidth={width}>
-	<nav>
+<header class:open class:desktop bind:clientWidth={width}>
+	<nav id>
 		<div id="menu">
 			<MenuToggle bind:open />
 		</div>
@@ -39,7 +39,7 @@
 					<a
 						{href}
 						on:click={() => (open = false)}
-						tabindex={open || !mobile ? null : '-1'}
+						tabindex={open || desktop ? null : '-1'}
 						aria-current={$page.url.pathname === href ? 'page' : null}>{text}</a
 					>
 				</li>
@@ -129,16 +129,19 @@
 		padding: 0;
 		margin: 0;
 		opacity: 0;
+		pointer-events: none;
 		transition:
 			var(--transition-theme),
-			opacity var(--duration-menu) ease-in-out;
+			opacity var(--duration-menu) var(--ease-accelerate);
 	}
 
-	header.open li {
+	header.open li,
+	header.desktop li {
 		opacity: 1;
+		pointer-events: auto;
 		transition:
 			var(--transition-theme),
-			opacity var(--duration-menu) ease-in-out var(--duration-menu);
+			opacity var(--duration-menu) var(--ease-decelerate) var(--duration-menu);
 	}
 
 	#home {
