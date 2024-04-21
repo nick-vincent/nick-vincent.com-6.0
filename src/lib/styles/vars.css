@@ -5,13 +5,20 @@
 	/* transitions */
 	--duration-menu: 150ms;
 	--duration-tooltip: 150ms;
+	--duration-focus-highlight: 150ms;
+	--duration-theme: 1000ms;
+
 	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
 	--ease-decelerate: cubic-bezier(0, 0, 0, 1);
 	--ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
-	--transition-theme: color 1s var(--ease-standard), border-color 1s var(--ease-standard),
-		background-color 1s var(--ease-standard), outline-color 1s var(--ease-standard),
-		box-shadow 1s var(--ease-standard), opacity 1s var(--ease-standard),
-		fill 1s var(--ease-standard);
+
+	--transition-theme: color var(--duration-theme) var(--ease-standard),
+		border-color var(--duration-theme) var(--ease-standard),
+		background-color var(--duration-theme) var(--ease-standard),
+		outline-color var(--duration-theme) var(--ease-standard),
+		box-shadow var(--duration-theme) var(--ease-standard),
+		opacity var(--duration-theme) var(--ease-standard),
+		fill var(--duration-theme) var(--ease-standard);
 
 	/* shadows */
 	--image-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -41,7 +48,7 @@
 	--light-color-arrow: rgba(0, 0, 0, 0.2);
 	--light-color-tooltip-text: rgba(204, 204, 204, 0.9);
 	--light-color-tooltip-background: rgba(34, 34, 34, 0.9);
-	--light-color-focus-highlight: rgba(60, 120, 180, 0.15);
+	--light-color-focus-highlight: rgba(60, 120, 180, 0.25);
 	--light-color-resume-text: #333;
 	--light-color-resume-background: rgba(255, 255, 255, 0.5);
 	--light-color-image-background: rgba(0, 0, 63, 0.05);
@@ -68,7 +75,7 @@
 	--dark-color-arrow: rgba(255, 255, 255, 0.15);
 	--dark-color-tooltip-text: rgba(34, 34, 34, 0.9);
 	--dark-color-tooltip-background: rgba(221, 221, 221, 0.9);
-	--dark-color-focus-highlight: rgba(94, 167, 255, 0.1);
+	--dark-color-focus-highlight: rgba(94, 167, 255, 0.25);
 	--dark-color-resume-text: #ccc;
 	--dark-color-resume-background: rgba(255, 255, 255, 0.05);
 	--dark-color-image-background: rgba(0, 0, 0, 0.1);

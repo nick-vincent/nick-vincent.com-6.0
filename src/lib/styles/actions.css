@@ -1,0 +1,40 @@
+a,
+button {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+	padding: 0;
+	margin: 0;
+	background: none;
+	font: inherit;
+	letter-spacing: inherit;
+	font-weight: 500;
+	line-height: inherit;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+a::before,
+button::before {
+	z-index: -1;
+	content: '';
+	display: block;
+	position: absolute;
+	inset: -0.25em;
+	background: var(--color-focus-highlight);
+	border-radius: 0.5em;
+	border: 0.1rem solid var(--color-focus-highlight);
+	scale: 0;
+	opacity: 0;
+	transition:
+		var(--transition-theme),
+		scale var(--duration-focus-highlight) var(--ease-standard),
+		opacity var(--duration-focus-highlight) var(--ease-standard);
+}
+a:focus-visible:before,
+button:focus-visible:before {
+	scale: 1;
+	opacity: 1;
+}

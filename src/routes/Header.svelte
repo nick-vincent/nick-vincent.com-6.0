@@ -15,6 +15,7 @@
 	];
 
 	let width;
+	$: mobile = width < 640;
 	$: if (width >= 640) open = false;
 </script>
 
@@ -38,7 +39,7 @@
 					<a
 						{href}
 						on:click={() => (open = false)}
-						tabindex={open ? null : '-1'}
+						tabindex={open || !mobile ? null : '-1'}
 						aria-current={$page.url.pathname === href ? 'page' : null}>{text}</a
 					>
 				</li>
