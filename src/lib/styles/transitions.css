@@ -2,6 +2,10 @@
 *::after,
 *::before {
 	transition: var(--transition-theme);
+}
+
+html,
+body {
 	scroll-behavior: smooth;
 }
 

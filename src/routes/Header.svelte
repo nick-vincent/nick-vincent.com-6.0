@@ -38,6 +38,7 @@
 					<a
 						{href}
 						on:click={() => (open = false)}
+						tabindex={open ? null : '-1'}
 						aria-current={$page.url.pathname === href ? 'page' : null}>{text}</a
 					>
 				</li>
@@ -59,7 +60,6 @@
 		-webkit-backdrop-filter: blur(1rem);
 		transition: min-height calc(var(--duration-menu) * 2) var(--ease-accelerate);
 	}
-
 	header.open {
 		min-height: 100dvh;
 		transition: min-height calc(var(--duration-menu) * 2) var(--ease-decelerate);
@@ -73,7 +73,11 @@
 		inset: 0;
 		z-index: -2;
 		opacity: 0;
-		transition: opacity 500ms var(--ease-standard);
+		transition: opacity calc(var(--duration-menu) * 2) var(--ease-accelerate);
+	}
+	header.open::before,
+	header.open::after {
+		transition: opacity calc(var(--duration-menu) * 2) var(--ease-decelerate);
 	}
 
 	/* light mode */
@@ -124,17 +128,15 @@
 		padding: 0;
 		margin: 0;
 		opacity: 0;
-		visibility: hidden;
 		transition:
-			visibility var(--duration-menu) ease-in-out,
+			var(--transition-theme),
 			opacity var(--duration-menu) ease-in-out;
 	}
 
 	header.open li {
 		opacity: 1;
-		visibility: visible;
 		transition:
-			visibility var(--duration-menu) ease-in-out var(--duration-menu),
+			var(--transition-theme),
 			opacity var(--duration-menu) ease-in-out var(--duration-menu);
 	}
 
