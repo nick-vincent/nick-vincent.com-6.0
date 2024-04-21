@@ -68,7 +68,7 @@
 			text-align: left;
 		}
 		.image {
-			max-width: calc(50% - 1rem);
+			width: calc(50% - 1rem);
 		}
 		.text {
 			padding-top: 1.5rem;

@@ -1,5 +1,10 @@
 <script>
 	import Image from '$lib/Image.svelte';
+	import EmailLink from '$lib/ui/EmailLink.svelte';
+	import LinkedInLink from '$lib/ui/LinkedInLink.svelte';
+	import InstagramLink from '$lib/ui/InstagramLink.svelte';
+	import YouTubeLink from '$lib/ui/YouTubeLink.svelte';
+
 	import photo from '$lib/images/contact.jpg?format=webp&w=1200';
 </script>
 
@@ -15,11 +20,11 @@
 	</div>
 	<div class="text">
 		<p>Connect or get in touch.</p>
-		<ul>
-			<li><a href="mailto:the.nick.vincent@gmail.com" target="_blank">Email</a></li>
-			<li><a href="https://www.linkedin.com/in/nickvincent/" target="_blank">LinkedIn</a></li>
-			<li><a href="https://www.instagram.com/the.nick.vincent/" target="_blank">Instagram</a></li>
-			<li><a href="https://www.youtube.com/@nick-vincent" target="_blank">YouTube</a></li>
+		<ul class="icons">
+			<li><EmailLink url="mailto:the.nick.vincent@gmail.com" /></li>
+			<li><LinkedInLink url="https://www.linkedin.com/in/nickvincent/" /></li>
+			<li><InstagramLink url="https://www.instagram.com/the.nick.vincent/" /></li>
+			<li><YouTubeLink url="https://www.youtube.com/@nick-vincent" /></li>
 		</ul>
 	</div>
 </div>
@@ -35,6 +40,12 @@
 		display: inline;
 	}
 
+	ul.icons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
 	@media (min-width: 860px) {
 		.grid {
 			display: flex;
@@ -42,7 +53,7 @@
 			text-align: left;
 		}
 		.image {
-			max-width: calc(50% - 1rem);
+			width: calc(50% - 1rem);
 		}
 		.text {
 			padding-top: 1.5rem;
