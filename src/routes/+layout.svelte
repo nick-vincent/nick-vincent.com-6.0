@@ -1,6 +1,6 @@
 <script>
 	import '$lib/styles/index.css';
-	import Header from './header.svelte';
+	import Header from './Header.svelte';
 	import PageTransition from '$lib/PageTransition.svelte';
 
 	export let data;
