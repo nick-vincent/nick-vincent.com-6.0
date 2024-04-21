@@ -79,8 +79,8 @@
 		opacity: 0;
 		transform: translateY(-0.5rem);
 		transition:
-			transform 100ms var(--ease-standard),
-			opacity 100ms var(--ease-standard);
+			transform var(--duration-tooltip) var(--ease-accelerate),
+			opacity var(--duration-tooltip) var(--ease-accelerate);
 	}
 
 	.arrow {
@@ -95,8 +95,8 @@
 		opacity: 1;
 		transform: translateY(0);
 		transition:
-			transform 100ms var(--ease-standard),
-			opacity 100ms var(--ease-standard);
+			transform var(--duration-tooltip) var(--ease-decelerate),
+			opacity var(--duration-tooltip) var(--ease-decelerate);
 	}
 
 	@media (hover: hover) {
@@ -104,8 +104,8 @@
 			opacity: 1;
 			transform: translateY(0);
 			transition:
-				transform 100ms var(--ease-standard),
-				opacity 100ms var(--ease-standard);
+				transform var(--duration-tooltip) var(--ease-decelerate),
+				opacity var(--duration-tooltip) var(--ease-decelerate);
 		}
 	}
 </style>
