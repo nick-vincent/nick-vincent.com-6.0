@@ -8,7 +8,9 @@
 </svelte:head>
 
 <div class="wrapper">
-	<img alt="Phone booth relic." src={photo} width="3024" height="3779" />
+	<div class="image-wrapper">
+		<img alt="Phone booth relic." src={photo} width="3024" height="3779" />
+	</div>
 	<h1>Contact</h1>
 	<p>Connect or get in touch.</p>
 	<ul>
@@ -25,7 +27,7 @@
 		width: 100%;
 	}
 
-	img {
+	.image-wrapper {
 		margin: 0 0 0.5rem 0;
 	}
 </style>

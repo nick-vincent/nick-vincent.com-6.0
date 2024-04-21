@@ -11,7 +11,9 @@
 </svelte:head>
 
 <div class="wrapper">
-	<img alt="Nick recording guitar tracks." src={photo} width="3024" height="3780" />
+	<div class="image-wrapper">
+		<img alt="Nick recording guitar tracks." src={photo} width="3024" height="3780" />
+	</div>
 	<h1>Nick Vincent</h1>
 	<p>
 		Known to <a href="/work/">push pixels</a>, <a href="/tunes/">strum tunes</a>,
@@ -26,7 +28,7 @@
 		width: 100%;
 	}
 
-	img {
+	.image-wrapper {
 		margin: 0 0 0.5rem 0;
 	}
 </style>

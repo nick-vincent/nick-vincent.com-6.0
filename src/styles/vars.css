@@ -10,6 +10,7 @@
 
 	/* shadows */
 	--image-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+	--image-shadow-inset: inset 0 0 0 0.1rem rgba(255, 255, 255, 0.25);
 	--image-shadow-focus: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
 
 	/* colors */

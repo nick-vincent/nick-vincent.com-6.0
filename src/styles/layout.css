@@ -34,11 +34,3 @@ body::after {
 	inset: 0;
 	z-index: -1;
 }
-
-img {
-	display: block;
-	width: 100%;
-	height: auto;
-	border-radius: 1rem;
-	box-shadow: var(--image-shadow);
-}
