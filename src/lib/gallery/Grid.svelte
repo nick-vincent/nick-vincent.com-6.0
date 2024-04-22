@@ -1,6 +1,5 @@
 <script>
-	// import Thumbnail from '$lib/gallery/Thumbnail.svelte';
-	import Image from '$lib/Image.svelte';
+	import Thumbnail from '$lib/gallery/Thumbnail.svelte';
 
 	export let images = [];
 </script>
@@ -8,9 +7,7 @@
 <ul>
 	{#each images as image}
 		<li>
-			<Image alt={image.title} src={image.thumb} width="360" height="360" radius="1rem" />
-
-			<!-- <Thumbnail {image} /> -->
+			<Thumbnail {image} />
 		</li>
 	{/each}
 </ul>

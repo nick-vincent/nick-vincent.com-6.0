@@ -21,8 +21,8 @@
 		fill var(--duration-theme) var(--ease-standard);
 
 	/* shadows */
-	--image-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
-	--image-shadow-focus: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+	--image-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.25);
+	--image-shadow-hover: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
 
 	/* colors */
 	--html-gradient: linear-gradient(

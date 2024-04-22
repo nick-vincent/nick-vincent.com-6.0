@@ -7,7 +7,7 @@
 </script>
 
 <div class="wrapper" style={`--border-radius: ${radius}`}>
-	<img {alt} {src} {width} {height} />
+	<img {alt} {src} {width} {height} loading="lazy" />
 </div>
 
 <style>
@@ -16,12 +16,12 @@
 		position: relative;
 		border-radius: var(--border-radius);
 		overflow: hidden;
-		box-shadow: var(--image-shadow);
 		background-color: var(--color-image-background);
-		background-image: linear-gradient(to bottom, var(--dark-color-line), var(--light-color-line));
+		box-shadow: var(--image-shadow);
+		/* background-image: linear-gradient(to bottom, var(--dark-color-line), var(--light-color-line)); */
 	}
 
-	.wrapper::before {
+	/* .wrapper::before {
 		position: absolute;
 		z-index: 1;
 		content: '';
@@ -40,18 +40,18 @@
 		animation-duration: 2s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
-	}
+	} */
 
-	.wrapper::after {
+	/* .wrapper::after {
 		position: absolute;
 		z-index: 3;
 		content: '';
 		border-radius: var(--border-radius);
 		inset: 0;
-		background-image: linear-gradient(to top, var(--dark-color-line), var(--light-color-line));
+		background-image: linear-gradient(to bottom, white, black);
 		background-clip: padding-box;
-		border: solid 0.25em transparent;
-	}
+		border: solid 0.2rem transparent;
+	} */
 
 	img {
 		z-index: 2;
@@ -62,12 +62,12 @@
 		margin: 0;
 	}
 
-	@keyframes image-loading {
+	/* @keyframes image-loading {
 		0% {
 			background-position: -300dvw 0;
 		}
 		100% {
 			background-position: 300dvw 0;
 		}
-	}
+	} */
 </style>

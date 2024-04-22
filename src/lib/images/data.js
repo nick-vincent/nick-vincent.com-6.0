@@ -63,6 +63,5 @@ export const getImageData = function (
 		images[i] = { id, title, caption, slug, url, date, thumb, src, width, height, buy };
 	}
 
-	console.log(images);
 	return images;
 };
