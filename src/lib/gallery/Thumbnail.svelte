@@ -122,7 +122,6 @@
 
 	/* shine gradient */
 	.shine {
-		z-index: 2;
 		pointer-events: none;
 		display: block;
 		position: absolute;
