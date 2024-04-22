@@ -39,7 +39,7 @@
 			right: '',
 			bottom: '',
 			transform: `rotate(${rotation})`,
-			[staticSide]: '-6px'
+			[staticSide]: '-0.5em'
 		});
 	}
 
