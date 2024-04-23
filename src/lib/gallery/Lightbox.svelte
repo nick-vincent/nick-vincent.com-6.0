@@ -11,10 +11,8 @@
 
 	const backUrl = `/${dir}/`;
 
-	$: src = image.src;
-	$: title = image.title;
-	$: width = image.width;
-	$: height = image.height;
+	const { src, title, width, height } = image;
+
 	$: aspect = width / height;
 
 	function onKeyUp(e) {
@@ -49,8 +47,6 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 2rem;
-		/* border-top: 2px solid var(--color-line);
-		padding-top: 2rem; */
 	}
 
 	.image {
@@ -66,7 +62,7 @@
 		text-align: left;
 	}
 
-	@media (min-width: 1100px) {
+	@media (min-width: 860px) {
 		.lightbox:not(.landscape) {
 			grid-template-columns: 1fr 1fr;
 		}

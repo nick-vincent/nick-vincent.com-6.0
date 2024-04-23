@@ -3,11 +3,7 @@
 
 	export let data;
 
-	$: image = data.image;
-	$: prevImage = data.prevImage;
-	$: nextImage = data.nextImage;
-	$: title = image.title;
-	$: caption = image.caption;
+	const { image, prevImage, nextImage, title, caption } = data;
 </script>
 
 <svelte:head>
