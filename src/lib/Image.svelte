@@ -6,12 +6,13 @@
 	export let radius = '1.5rem';
 </script>
 
-<div class="wrapper" style={`--border-radius: ${radius}`}>
+<span class="wrapper" style={`--border-radius: ${radius}`}>
 	<img {alt} {src} {width} {height} loading="lazy" />
-</div>
+</span>
 
 <style>
 	.wrapper {
+		display: block;
 		border-radius: var(--border-radius);
 		overflow: hidden;
 		background-color: var(--color-image-background);

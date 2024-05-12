@@ -9,6 +9,7 @@ html {
 	height: 100dvh;
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 
 html::after {
@@ -27,6 +28,7 @@ body {
 	max-width: 54rem;
 	margin: 0 auto;
 	padding: 0 1rem;
+	overflow-x: hidden;
 }
 
 body::before,
