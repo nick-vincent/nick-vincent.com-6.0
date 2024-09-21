@@ -1,6 +1,6 @@
 <script>
 	import Image from '$lib/Image.svelte';
-	import photo from '$lib/images/home.jpg?format=webp&w=1200';
+	import photo from '$lib/images/home.png?format=webp&w=1200';
 </script>
 
 <svelte:head>
